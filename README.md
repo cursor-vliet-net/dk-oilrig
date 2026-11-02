@@ -3,7 +3,12 @@
 A single-level Donkey Kong-style game set on an offshore oil rig at night.
 TypeScript + Vite + HTML5 canvas, no framework, no image assets (everything is drawn procedurally).
 
-## Run
+## Play
+
+- Online: https://cursor-vliet-net.github.io/dk-oilrig/ (GitHub Pages, served from `docs/`)
+- Offline, no npm: download `rig-kong.html` and open it in a browser. It is a single file with the game script inlined.
+
+## Run from source
 
     npm install
     npm run dev      # http://localhost:5174
@@ -20,6 +25,14 @@ TypeScript + Vite + HTML5 canvas, no framework, no image assets (everything is d
 | P | pause |
 | M | mute |
 
+## Rebuild the single-file version
+
+The standalone page is the Vite `index.html` with the bundled game script inlined:
+
+    npx esbuild src/main.ts --bundle --minify --format=iife --target=es2020 --outfile=/tmp/game.js
+    # inline /tmp/game.js into index.html in place of the <script type="module"> tag,
+    # then save the result as rig-kong.html and copy it to docs/index.html
+
 ## Code layout
 
 - `src/main.ts` fixed-timestep (60 Hz) loop
@@ -28,3 +41,4 @@ TypeScript + Vite + HTML5 canvas, no framework, no image assets (everything is d
 - `src/render.ts` procedural renderer (sky, sea, flare stack, sprites, HUD)
 - `src/input.ts` keyboard with edge detection
 - `src/audio.ts` WebAudio beeps
+- `rig-kong.html` standalone build, `docs/index.html` is the same file for GitHub Pages
