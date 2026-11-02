@@ -677,7 +677,7 @@ function drawOverlay(ctx: Ctx, game: Game): void {
   switch (game.phase) {
     case 'title':
       panel([
-        ['RINKEY KING', C.hat, 26],
+        ['RINKEY DING', C.hat, 26],
         ['Offshore Rescue', '#9fd0ff', 13],
         ['', '#fff', 12],
         ['Arrows/WASD move & climb', '#fff', 12],

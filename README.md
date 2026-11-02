@@ -1,4 +1,4 @@
-# RInkey King — Offshore Rescue
+# RInkey Ding — Offshore Rescue
 
 A single-level Donkey Kong-style game set on an offshore oil rig at night.
 TypeScript + Vite + HTML5 canvas, no framework, no image assets (everything is drawn procedurally).
@@ -6,7 +6,7 @@ TypeScript + Vite + HTML5 canvas, no framework, no image assets (everything is d
 ## Play
 
 - Online: https://cursor-vliet-net.github.io/dk-oilrig/ (GitHub Pages, served from `docs/`)
-- Offline, no npm: download `rinkey-king.html` and open it in a browser. It is a single file with the game script inlined.
+- Offline, no npm: download `rinkey-ding.html` and open it in a browser. It is a single file with the game script inlined.
 
 ## Run from source
 
@@ -31,7 +31,7 @@ The standalone page is the Vite `index.html` with the bundled game script inline
 
     npx esbuild src/main.ts --bundle --minify --format=iife --target=es2020 --outfile=/tmp/game.js
     # inline /tmp/game.js into index.html in place of the <script type="module"> tag,
-    # then save the result as rinkey-king.html and copy it to docs/index.html
+    # then save the result as rinkey-ding.html and copy it to docs/index.html
 
 ## Code layout
 
@@ -41,4 +41,4 @@ The standalone page is the Vite `index.html` with the bundled game script inline
 - `src/render.ts` procedural renderer (sky, sea, flare stack, sprites, HUD)
 - `src/input.ts` keyboard with edge detection
 - `src/audio.ts` WebAudio beeps
-- `rinkey-king.html` standalone build, `docs/index.html` is the same file for GitHub Pages
+- `rinkey-ding.html` standalone build, `docs/index.html` is the same file for GitHub Pages
